@@ -1,0 +1,46 @@
+.topnav {
+    background-color: #f2f2f2;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add padding to the topnav for spacing */
+}
+
+.logo {
+    flex: 1; /* Takes up the available space on the left */
+    display: flex; /* Make the logo and text side by side */
+    align-items: center; /* Center vertically within .logo */
+}
+
+.logo img {
+    max-height: 40px; /* Set a maximum height for the logo */
+}
+
+.logo h2 {
+    margin-left: 10px; /* Add some spacing between the image and text */
+}
+
+.nav-links {
+    flex: 1; /* Takes up the available space on the right */
+    text-align: right; /* Align the links to the right */
+}
+
+.topnav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 14px 16px;
+}
+
+.topnav a:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: #333;
+}
+
+

@@ -1,0 +1,44 @@
+<%- include('partials/loginHeader') %>
+
+<div class="container">
+  <h1 class="title">Sign in</h1>
+
+  <form class="signin-signup" action="/login" method="post" name="login">
+    <div class="input-field">
+      <i class="fa fa-envelope"></i>
+      <!-- You can use a suitable icon here -->
+      <input type="email" name="email" id="email" placeholder="Email" />
+    </div>
+    <div class="input-field">
+      <i class="fa fa-lock"></i>
+      <!-- You can use a lock icon here -->
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+    </div>
+    <button class="btn" type="submit">Login</button>
+  </form>
+</div>
+
+<div class="logo">
+  <img src="/css/login/images/meditrackLogo.png" />
+  <h2>MediTrack</h2>
+</div>
+
+<div class="new-here">
+  <h3>New here?</h3>
+  <p>
+    Welcome to our platform! Create an account and unlock a world of
+    possibilities.
+  </p>
+  <form method="get" action="/register">
+    <button class="signup-button">Sign up</button>
+  </form>
+</div>
+
+<div class="image">
+  <img src="/css/login/images/log.svg" />
+</div>

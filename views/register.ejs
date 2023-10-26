@@ -1,0 +1,45 @@
+<%- include('partials/registerHeader') %>
+
+<div class="container">
+  <h1 class="title">Sign up</h1>
+
+  <form class="signin-signup" action="/register" method="post" name="register">
+    <div class="input-field">
+      <i class="fa fa-envelope"></i>
+      <!-- You can use a suitable icon here -->
+      <input type="email" name="email" id="email" placeholder="Email" />
+    </div>
+    <div class="input-field">
+      <i class="fa fa-lock"></i>
+      <!-- You can use a lock icon here -->
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+      />
+    </div>
+    <button class="btn" type="submit">Login</button>
+  </form>
+</div>
+
+<div class="logo">
+  <img src="/css/register/images/Meditrack logo.png" />
+  <h3>MediTrack</h3>
+</div>
+
+<div class="one-of-us">
+  <h3>One of us?</h3>
+  <p>
+    Log in to your account by entering your registered email and password to
+    access your profile and personalized content.
+  </p>
+  <form method="get" action = "/login">
+    <button class="login-button">Sign in</button>
+  </form>
+  
+</div>
+
+<div class="register-img">
+  <img src="/css/register/images/register.svg" width="470px" />
+</div>
