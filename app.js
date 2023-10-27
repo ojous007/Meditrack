@@ -71,10 +71,6 @@ app.get("/records", (req, res) => {
   res.render("records.ejs");
 });
 
-app.get("/uploaded", (req, res) => {
-  res.render("uploaded.ejs");
-});
-
 // Handle user registration
 app.post("/register", (req, res) => {
   // Hash the password using bcrypt
@@ -127,19 +123,16 @@ app.post("/login", (req, res) => {
     });
 });
 
-app.post('/documents/upload',  async (req, res) => {
+app.post("/upload", async (req, res) => {
   const newDocument = new Document({
     name: req.body.name,
     fileName: req.body.fileName,
-    documentPath: req.file.path, // Assuming you store the file path
+    documentPath: req.body.document, // Assuming you store the file path
   });
-
-  try {
-    const savedDocument = await newDocument.save();
-    res.json(savedDocument);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
+  newDocument.save();
+  res.send(
+    "<script>alert('Document Saved'); window.location='/records'</script>"
+  );
 });
 
 // app.get("/uploadedfiles", async (req, res) => {
@@ -161,9 +154,6 @@ app.post('/documents/upload',  async (req, res) => {
 //     res.status(500).json({ message: 'Internal Server Error' });
 //   }
 // });
-
-
-
 
 // Start the server
 app.listen(3000, () => {
