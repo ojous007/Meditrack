@@ -21,7 +21,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/medicalDB", {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "./uploads"));
+    cb(null, path.join(__dirname, "uploads"));
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString() + "-" + file.originalname);
