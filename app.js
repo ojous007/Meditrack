@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 
@@ -19,10 +21,10 @@ mongoose.connect("mongodb://127.0.0.1:27017/medicalDB", {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "/uploads/");
+    cb(null, path.join(__dirname, "./uploads"));
   },
   filename: (req, file, cb) => {
-    cb(null, newDate().toISOString() + "-" + file.originalname);
+    cb(null, new Date().toISOString() + "-" + file.originalname);
   },
 });
 
@@ -123,37 +125,22 @@ app.post("/login", (req, res) => {
     });
 });
 
-app.post("/upload", async (req, res) => {
+app.post("/upload", upload.single("document"), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).send("No file uploaded.");
+  }
+
   const newDocument = new Document({
     name: req.body.name,
     fileName: req.body.fileName,
-    documentPath: req.body.document, // Assuming you store the file path
+    documentPath: req.file.path,
   });
+
   newDocument.save();
   res.send(
     "<script>alert('Document Saved'); window.location='/records'</script>"
   );
 });
-
-// app.get("/uploadedfiles", async (req, res) => {
-//   try {
-//     // Use async/await to fetch documents from the database
-//     const documents = await Document.find({});
-
-//     // Check if documents were found
-//     if (documents && documents.length > 0) {
-//       // If documents were found, send them as a response
-//       res.status(200).json(documents);
-//     } else {
-//       // If no documents were found, send an appropriate message or status code
-//       res.status(404).json({ message: 'No uploaded files found.' });
-//     }
-//   } catch (err) {
-//     // Handle any errors that occur during the database query
-//     console.error('Error:', err);
-//     res.status(500).json({ message: 'Internal Server Error' });
-//   }
-// });
 
 // Start the server
 app.listen(3000, () => {

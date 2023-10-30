@@ -13,12 +13,17 @@
   </div>
 </div>
 
-<form method="post" action="/upload" id="documentForm">
+<form class="documentForm" method="post" action="/upload" enctype="multipart/form-data">
   <input type="text" placeholder="Name" name="name" id="name"/>
   <input type="text" placeholder="File Name" name="fileName" id="fileName"/>
   <input type="file" placeholder="Upload document" id="document" name="document" />
   <button type="submit">Submit</button>
 </form>
+<!-- <form method="post" id="documentForm" action="/upload" enctype="multipart/form-data">
+
+  <input type="file" name="file" />
+  <input type="submit" value="Upload File" />
+</form> -->
 
 <!-- <script>
       const documentForm = document.getElementById('documentForm');
@@ -37,7 +42,7 @@
               if (response.ok) {
                   const data = await response.json();
                  
-              } else {
+              }  else {
                   const errorData = await response.json();
                  
               }

@@ -1,46 +1,42 @@
-.topnav {
-    background-color: #f2f2f2;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; /* Add padding to the topnav for spacing */
-}
 
-.logo {
-    flex: 1; /* Takes up the available space on the left */
-    display: flex; /* Make the logo and text side by side */
-    align-items: center; /* Center vertically within .logo */
-}
-
-.logo img {
-    max-height: 40px; /* Set a maximum height for the logo */
-}
-
-.logo h2 {
-    margin-left: 10px; /* Add some spacing between the image and text */
-}
-
-.nav-links {
-    flex: 1; /* Takes up the available space on the right */
-    text-align: right; /* Align the links to the right */
-}
-
-.topnav a {
-    color: #333;
-    text-decoration: none;
-    font-size: 17px;
-    padding: 14px 16px;
-}
-
-.topnav a:hover {
-    background-color: #04AA6D;
-    color: white;
-}
-
-.topnav a.active {
-    background-color: #04AA6D;
-    color: #333;
-}
-
-
+/* Style the form container */
+.documentForm {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style the input fields */
+  .documentForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style the file input */
+  .documentForm input[type="file"] {
+    border: none;
+    outline: none;
+  }
+  
+  /* Style the submit button */
+  .documentForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Add some hover effect to the button */
+  .documentForm button:hover {
+    background-color: #0056b3;
+  }
+  
