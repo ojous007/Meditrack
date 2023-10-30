@@ -128,9 +128,18 @@ app.post("/upload", upload.single("document"), (req, res) => {
     return res.status(400).send("No file uploaded.");
   }
 
-  console.log(req.file);
+  const newDocument = new Document({
+    name: req.body.name,
+    fileName: req.file.filename,
+    documentPath: req.file.path,
+  });
 
-  res.redirect("/records");
+  newDocument.save();
+
+  res.send(
+    "<script>alert('File uploaded '); window.location='/records'</script>"
+  );
+
 });
 
 // Start the server
