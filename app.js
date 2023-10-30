@@ -5,10 +5,19 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const multer = require("multer");
-const fs = require("fs");
-const path = require("path");
 
 const app = express();
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage });
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -18,17 +27,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/medicalDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "uploads"));
-  },
-  filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + "-" + file.originalname);
-  },
-});
-
-const upload = multer({ storage });
 
 // Define the user schema
 const userSchema = new mongoose.Schema({
@@ -125,21 +123,14 @@ app.post("/login", (req, res) => {
     });
 });
 
-app.post("/upload", upload.single("document"), async (req, res) => {
+app.post("/upload", upload.single("document"), (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file uploaded.");
   }
 
-  const newDocument = new Document({
-    name: req.body.name,
-    fileName: req.body.fileName,
-    documentPath: req.file.path,
-  });
+  console.log(req.file);
 
-  newDocument.save();
-  res.send(
-    "<script>alert('Document Saved'); window.location='/records'</script>"
-  );
+  res.redirect("/records");
 });
 
 // Start the server
