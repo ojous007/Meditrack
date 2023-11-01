@@ -72,7 +72,11 @@ app.get("/records", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render('about.ejs');
+  res.render("about.ejs");
+});
+
+app.get("/home", (req, res) => {
+  res.render("home.ejs");
 });
 
 // Handle user registration
@@ -145,7 +149,6 @@ app.post("/upload", upload.single("document"), (req, res) => {
   res.send(
     "<script>alert('File Uploaded Successfully'); window.location='/records'</script>"
   );
-
 });
 
 // Start the server

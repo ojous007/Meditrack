@@ -49,13 +49,49 @@ section:nth-child(even){
 
 
 
+.uploadHeading{
+    font-family: 'poppins', sans-serif;
+    color: #777;
+    padding-top: 7%;
+    text-align: center;
+    font-size: 2rem;
+}
 
+.copyrightRecords{
+    padding: 0 0 0 0;
+    margin-top: 13%;
+    font-family: 'poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #777;
+    text-align: center;
+}
+
+.copyright{
+    padding: 4% 0 0 0;
+    font-family: 'poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #777;
+    text-align: center;
+}
+
+.aboutContent{
+    font-family: 'poppins', sans-serif;
+    font-size: 1.7rem;
+    color: #777;
+    line-height: 3rem;
+    letter-spacing: .1rem;
+
+}
+
+.aboutContent h2{
+    color: #16a085;
+}
 
 /* Style the form container */
 .documentForm {
-    width: 300px;
-    margin: 100px auto;
-    padding:  20px;
+    width: 350px;
+    margin: 2% auto;
+    padding:  10px;
     background-color: #f7f7f7;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
