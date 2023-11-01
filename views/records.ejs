@@ -13,25 +13,29 @@
   </div>
 </div>
 
-<h3 class="uploadHeading">Upload your medical reports here!</h3>
-
-<form
-  class="documentForm"
-  method="post"
-  action="/upload"
-  enctype="multipart/form-data"
->
-  <input type="text" placeholder="Name" name="name" id="name" />
-  <input type="text" placeholder="File Name" name="fileName" id="fileName" />
-  <input
-    type="file"
-    placeholder="Upload document"
-    id="document"
-    name="document"
-  />
-  <button type="submit">Submit</button>
-</form>
-
-<div class="copyrightRecords">
-  <p>© 2023 Meditrack. All rights reserved.</p>
+<div class="uploadImage">
+  <img src="/css/home/images/book-img.svg"
 </div>
+
+<div class="uploadContainer">
+  <h3 class="uploadHeading">Upload your medical reports here!</h3>
+
+  <form
+    class="documentForm"
+    method="post"
+    action="/upload"
+    enctype="multipart/form-data"
+  >
+    <input type="text" placeholder="Name" name="name" id="name" />
+    <input type="text" placeholder="File Name" name="fileName" id="fileName" />
+    <input
+      type="file"
+      placeholder="Upload document"
+      id="document"
+      name="document"
+    />
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<%-include('partials/footer') %>
