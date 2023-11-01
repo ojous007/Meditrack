@@ -71,6 +71,10 @@ app.get("/records", (req, res) => {
   res.render("records.ejs");
 });
 
+app.get("/about", (req, res) => {
+  res.render('about.ejs');
+});
+
 // Handle user registration
 app.post("/register", (req, res) => {
   // Hash the password using bcrypt
@@ -125,7 +129,9 @@ app.post("/login", (req, res) => {
 
 app.post("/upload", upload.single("document"), (req, res) => {
   if (!req.file) {
-    return res.status(400).send("No file uploaded.");
+    res.send(
+      "<script>alert('No File Uploaded'); window.location='/records'</script>"
+    );
   }
 
   const newDocument = new Document({
@@ -137,7 +143,7 @@ app.post("/upload", upload.single("document"), (req, res) => {
   newDocument.save();
 
   res.send(
-    "<script>alert('File uploaded '); window.location='/records'</script>"
+    "<script>alert('File Uploaded Successfully'); window.location='/records'</script>"
   );
 
 });
