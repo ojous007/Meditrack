@@ -114,8 +114,9 @@ section:nth-child(even) {
 }
 
 .uploadImage {
-  width: 45%;
+  width: 48%;
 }
+
 .uploadContainer {
   position: absolute;
   right: 17%;
