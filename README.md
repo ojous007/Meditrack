@@ -3,6 +3,9 @@
 
 MediTrack is a web application designed to help users efficiently manage and access their medical records. With MediTrack, you can upload, store, and access your important medical documents and records securely. This README provides an overview of the application and its features.
 
+[![Click to watch the video](https://github.com/Krips24/MediTrack/blob/main/public/css/meditrackHome.png)](https://github.com/Krips24/MediTrack/blob/main/public/css/20231102151115.mp4)
+
+
 ## Features
 
 - **Upload Medical Records:** Easily upload your important medical records, such as prescriptions, lab results, and medical images. MediTrack allows you to organize and store these records in one secure location.
