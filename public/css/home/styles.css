@@ -52,17 +52,17 @@ section:nth-child(even) {
 .no-records h3{
   text-align: center;
   font-size: 3rem;
-  position: absolute;
-  top: 31%;
-  right: 38%;
+  padding: 5%;
 }
 
 
 /* Style for the page title */
 .page-title {
+  font-family: 'poppins', sans-serif;
   text-align: center;
   font-size: 24px;
   margin: 20px 0;
+  color: #444;
 }
 
 /* Style for the file list container */
