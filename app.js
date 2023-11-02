@@ -67,8 +67,8 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
-app.get("/records", (req, res) => {
-  res.render("records.ejs");
+app.get("/upload", (req, res) => {
+  res.render("uploads.ejs");
 });
 
 app.get("/about", (req, res) => {
@@ -77,6 +77,30 @@ app.get("/about", (req, res) => {
 
 app.get("/home", (req, res) => {
   res.render("home.ejs");
+});
+
+app.get("/myfiles", (req, res) => {
+  // Fetch the user's documents from the database using promises
+  Document.find({})
+    .then((documents) => {
+      res.render("myFiles.ejs", { documents });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("An error occurred while fetching documents.");
+    });
+});
+
+app.get("/download/:fileName", (req, res) => {
+  const fileName = req.params.fileName;
+  const filePath = `./uploads/${fileName}`;
+
+  res.download(filePath, (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("An error occurred while downloading the file.");
+    }
+  });
 });
 
 // Handle user registration
@@ -134,7 +158,7 @@ app.post("/login", (req, res) => {
 app.post("/upload", upload.single("document"), (req, res) => {
   if (!req.file) {
     res.send(
-      "<script>alert('No File Uploaded'); window.location='/records'</script>"
+      "<script>alert('No File Uploaded'); window.location='/upload'</script>"
     );
   }
 
@@ -147,7 +171,7 @@ app.post("/upload", upload.single("document"), (req, res) => {
   newDocument.save();
 
   res.send(
-    "<script>alert('File Uploaded Successfully'); window.location='/records'</script>"
+    "<script>alert('File Uploaded Successfully'); window.location='/upload'</script>"
   );
 });
 

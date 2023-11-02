@@ -48,6 +48,67 @@ section:nth-child(even) {
   background: #f5f5f5;
 }
 
+
+.no-records h3{
+  text-align: center;
+  font-size: 3rem;
+  position: absolute;
+  top: 31%;
+  right: 38%;
+}
+
+
+/* Style for the page title */
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+/* Style for the file list container */
+.file-list {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Style for each file item */
+.file-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+}
+
+/* Style for file labels (e.g., "Name", "File Name") */
+.file-label {
+  font-weight: bold;
+}
+
+/* Style for file values */
+.file-value {
+  margin-left: 10px;
+}
+
+/* Style for view link */
+.view-link {
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for the view link */
+.view-link:hover {
+  background-color: #207dbb;
+}
+
+
+
 .aboutContent {
   text-align: center;
   font-family: "poppins", sans-serif;
@@ -126,7 +187,7 @@ section:nth-child(even) {
 .uploadHeading {
   font-family: "poppins", sans-serif;
   color: #777;
-  padding-top: 7%;
+  padding-top: 5%;
   text-align: center;
   font-size: 2rem;
 }
