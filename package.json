@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test": "echo \"No test specified\" && exit 0"
   },
-  "author": "krapansh",
+  "author": "Ojous",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
