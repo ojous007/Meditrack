@@ -4,12 +4,10 @@
   "description": "Website to store medical data",
   "main": "app.js",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "test": "echo \"No test specified\" && exit 0"
-}
-
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "author": "krapansh",
   "license": "ISC",
